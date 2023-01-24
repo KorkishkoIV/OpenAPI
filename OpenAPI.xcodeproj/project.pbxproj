@@ -10,6 +10,11 @@
 		E1BCD8CF297EFBC300B4567A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD8CE297EFBC300B4567A /* AppDelegate.swift */; };
 		E1BCD8D3297EFBC300B4567A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD8D2297EFBC300B4567A /* ViewController.swift */; };
 		E1BCD8D8297EFBC400B4567A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1BCD8D7297EFBC400B4567A /* Assets.xcassets */; };
+		E1BCD8E3297F04A600B4567A /* AppCoorddinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD8E2297F04A600B4567A /* AppCoorddinator.swift */; };
+		E1BCD8E5297F059B00B4567A /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD8E4297F059B00B4567A /* ListCoordinator.swift */; };
+		E1BCD8E7297F089300B4567A /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD8E6297F089300B4567A /* BaseCoordinator.swift */; };
+		E1BCD8EF297F122600B4567A /* ListViewContoroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD8EE297F122600B4567A /* ListViewContoroller.swift */; };
+		E1BCD8F129805AA300B4567A /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD8F029805AA300B4567A /* ListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +23,11 @@
 		E1BCD8D2297EFBC300B4567A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E1BCD8D7297EFBC400B4567A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1BCD8DC297EFBC400B4567A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1BCD8E2297F04A600B4567A /* AppCoorddinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoorddinator.swift; sourceTree = "<group>"; };
+		E1BCD8E4297F059B00B4567A /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
+		E1BCD8E6297F089300B4567A /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		E1BCD8EE297F122600B4567A /* ListViewContoroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewContoroller.swift; sourceTree = "<group>"; };
+		E1BCD8F029805AA300B4567A /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,12 +60,33 @@
 		E1BCD8CD297EFBC300B4567A /* OpenAPI */ = {
 			isa = PBXGroup;
 			children = (
+				E1BCD8E8297F10BA00B4567A /* BaseObjects */,
 				E1BCD8CE297EFBC300B4567A /* AppDelegate.swift */,
 				E1BCD8D2297EFBC300B4567A /* ViewController.swift */,
 				E1BCD8D7297EFBC400B4567A /* Assets.xcassets */,
 				E1BCD8DC297EFBC400B4567A /* Info.plist */,
+				E1BCD8E2297F04A600B4567A /* AppCoorddinator.swift */,
+				E1BCD8F229805ECB00B4567A /* ListView */,
 			);
 			path = OpenAPI;
+			sourceTree = "<group>";
+		};
+		E1BCD8E8297F10BA00B4567A /* BaseObjects */ = {
+			isa = PBXGroup;
+			children = (
+				E1BCD8E6297F089300B4567A /* BaseCoordinator.swift */,
+			);
+			path = BaseObjects;
+			sourceTree = "<group>";
+		};
+		E1BCD8F229805ECB00B4567A /* ListView */ = {
+			isa = PBXGroup;
+			children = (
+				E1BCD8F029805AA300B4567A /* ListViewModel.swift */,
+				E1BCD8E4297F059B00B4567A /* ListCoordinator.swift */,
+				E1BCD8EE297F122600B4567A /* ListViewContoroller.swift */,
+			);
+			path = ListView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +158,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1BCD8EF297F122600B4567A /* ListViewContoroller.swift in Sources */,
+				E1BCD8E5297F059B00B4567A /* ListCoordinator.swift in Sources */,
+				E1BCD8F129805AA300B4567A /* ListViewModel.swift in Sources */,
+				E1BCD8E7297F089300B4567A /* BaseCoordinator.swift in Sources */,
 				E1BCD8D3297EFBC300B4567A /* ViewController.swift in Sources */,
+				E1BCD8E3297F04A600B4567A /* AppCoorddinator.swift in Sources */,
 				E1BCD8CF297EFBC300B4567A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
