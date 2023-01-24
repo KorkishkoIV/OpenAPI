@@ -31,6 +31,8 @@ final class ListCoordinator: BaseCoordinator, pListCoordinator {
     }
     
     func openDetails(model: Any) {
-        // ToDo - implement detailCoordinator.start()
+        let detailsCoordinator = DetailsCoordinator()
+        detailsCoordinator.navigationController = self.navigationController
+        detailsCoordinator.start(with: model)
     }
 }
