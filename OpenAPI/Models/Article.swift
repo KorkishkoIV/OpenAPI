@@ -8,7 +8,7 @@
 import Foundation
 
 struct Article: Codable {
-    var source: String?
+    var source: ArticleSource?
     var author: String?
     var title: String?
     var description: String?
@@ -17,7 +17,7 @@ struct Article: Codable {
     var content: String?   
 }
 
-struct Source: Codable {
+struct ArticleSource: Codable {
     var id: String?
     var name: String?
 }

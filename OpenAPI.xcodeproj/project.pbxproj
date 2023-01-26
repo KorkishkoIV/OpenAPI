@@ -20,6 +20,9 @@
 		E1BCD8F92980630D00B4567A /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD8F82980630D00B4567A /* DetailsViewController.swift */; };
 		E1BCD8FB2981B26700B4567A /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD8FA2981B26700B4567A /* Article.swift */; };
 		E1BCD8FD2981B45400B4567A /* ArticlesResponce.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD8FC2981B45400B4567A /* ArticlesResponce.swift */; };
+		E1BCD90029824F1500B4567A /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD8FF29824F1500B4567A /* ListCell.swift */; };
+		E1BCD9022982561400B4567A /* ListVMStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD9012982561400B4567A /* ListVMStub.swift */; };
+		E1BCD9062982891C00B4567A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD9052982891C00B4567A /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		E1BCD8F82980630D00B4567A /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		E1BCD8FA2981B26700B4567A /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		E1BCD8FC2981B45400B4567A /* ArticlesResponce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesResponce.swift; sourceTree = "<group>"; };
+		E1BCD8FF29824F1500B4567A /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		E1BCD9012982561400B4567A /* ListVMStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVMStub.swift; sourceTree = "<group>"; };
+		E1BCD9052982891C00B4567A /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,7 @@
 				E1BCD8F32980616300B4567A /* DetailView */,
 				E1BCD8E8297F10BA00B4567A /* BaseObjects */,
 				E1BCD8CE297EFBC300B4567A /* AppDelegate.swift */,
+				E1BCD9052982891C00B4567A /* SceneDelegate.swift */,
 				E1BCD8D2297EFBC300B4567A /* ViewController.swift */,
 				E1BCD8D7297EFBC400B4567A /* Assets.xcassets */,
 				E1BCD8DC297EFBC400B4567A /* Info.plist */,
@@ -97,6 +104,8 @@
 				E1BCD8F029805AA300B4567A /* ListViewModel.swift */,
 				E1BCD8E4297F059B00B4567A /* ListCoordinator.swift */,
 				E1BCD8EE297F122600B4567A /* ListViewContoroller.swift */,
+				E1BCD8FF29824F1500B4567A /* ListCell.swift */,
+				E1BCD9012982561400B4567A /* ListVMStub.swift */,
 			);
 			path = ListView;
 			sourceTree = "<group>";
@@ -191,9 +200,12 @@
 			files = (
 				E1BCD8FB2981B26700B4567A /* Article.swift in Sources */,
 				E1BCD8EF297F122600B4567A /* ListViewContoroller.swift in Sources */,
+				E1BCD9022982561400B4567A /* ListVMStub.swift in Sources */,
 				E1BCD8E5297F059B00B4567A /* ListCoordinator.swift in Sources */,
 				E1BCD8F129805AA300B4567A /* ListViewModel.swift in Sources */,
+				E1BCD9062982891C00B4567A /* SceneDelegate.swift in Sources */,
 				E1BCD8E7297F089300B4567A /* BaseCoordinator.swift in Sources */,
+				E1BCD90029824F1500B4567A /* ListCell.swift in Sources */,
 				E1BCD8D3297EFBC300B4567A /* ViewController.swift in Sources */,
 				E1BCD8F52980618800B4567A /* DetailsCoordinator.swift in Sources */,
 				E1BCD8FD2981B45400B4567A /* ArticlesResponce.swift in Sources */,

@@ -15,19 +15,16 @@ protocol pListCoordinator: AnyObject {
 
 final class ListCoordinator: BaseCoordinator, pListCoordinator {
     func start(in window: UIWindow?) {
-        
         let listVC = ListViewController()
-        let listVM = ListViewModel()
+        let listVM = ListVMStub()//ListViewModel()
         
         listVC.vm = listVM
         listVM.vc = listVC
         listVM.coordinator = self
         
-        let navigationControoler = UINavigationController(rootViewController: listVC)
-        self.navigationController = navigationControoler
-        
-        window?.rootViewController = self.navigationController
-        window?.makeKeyAndVisible()
+        let navController = UINavigationController(rootViewController: listVC)
+        navigationController = navController
+        window?.rootViewController = navigationController
     }
     
     func openDetails(model: Any) {

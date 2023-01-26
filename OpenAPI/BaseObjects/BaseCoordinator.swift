@@ -8,5 +8,5 @@
 import UIKit
 
 class BaseCoordinator {
-    weak var navigationController: UINavigationController?
+    var navigationController: UINavigationController?
 }
