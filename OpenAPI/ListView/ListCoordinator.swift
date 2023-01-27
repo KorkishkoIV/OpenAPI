@@ -30,6 +30,9 @@ final class ListCoordinator: BaseCoordinator, pListCoordinator {
     func openDetails(model: Any) {
         let detailsCoordinator = DetailsCoordinator()
         detailsCoordinator.navigationController = self.navigationController
-        detailsCoordinator.start(with: model)
+        guard let article = model as? Article else {
+            return
+        }
+        detailsCoordinator.start(with: article)
     }
 }

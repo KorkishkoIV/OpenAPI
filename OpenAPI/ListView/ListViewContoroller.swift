@@ -31,7 +31,10 @@ final class ListViewController: UIViewController, pListViewController {
     private func setupViews() {
         view.addSubview(listTableView)
         view.backgroundColor = .white
+        
+        listTableView.delegate = self
         listTableView.dataSource = self
+        
         navigationItem.title = "List"
         setupConstraints()
     }
@@ -58,5 +61,11 @@ extension ListViewController: UITableViewDataSource {
         }
         cell.setModel(item)
         return cell    
+    }
+}
+
+extension ListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        vm?.showDetailsForItemAtindex(index: indexPath.row)
     }
 }

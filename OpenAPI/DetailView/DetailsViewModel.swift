@@ -8,10 +8,55 @@
 import Foundation
 
 protocol pDetailsViewModel {
-    
+    func title() -> String
+    func authorString() -> String
+    func publishDateString() -> String
+    func presentationContent() -> String
 }
 
 final class DetailsViewModel: pDetailsViewModel {
     weak var vc: pDetailsViewController?
     var coordinator: pDetailsCoordinator?
+    
+    private var article: Article
+    
+    init(article: Article) {
+        self.article = article
+    }
+    
+    func title() -> String {
+        article.title ?? ""
+    }
+    
+    func authorString() -> String {
+        guard let author = article.author else {
+            return "Unknown"
+        }
+        return "by " + author
+    }
+    
+    func publishDateString() -> String {
+        let dateFormatter: DateFormatter = {
+            let df = DateFormatter()
+            df.dateFormat = "EEE, dd.MM.YYYY"
+            return df
+        }()
+        
+        guard let publishDate = article.publishedAt else {
+            return ""
+        }
+        
+        return dateFormatter.string(from: publishDate)
+    }
+    
+    func presentationContent() -> String {
+        guard let content = article.content else {
+            return ""
+        }
+        return "\t" + content.replacingOccurrences(of: #"\[\+\d* chars\]"#,
+                                     with: "",
+                                     options: [.regularExpression],
+                                            range: content.range(of: content))
+    }
+    
 }

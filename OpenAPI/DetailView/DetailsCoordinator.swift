@@ -6,14 +6,14 @@
 //
 
 protocol pDetailsCoordinator {
-    func start(with model: Any)
+    func start(with model: Article)
 }
 
 final class DetailsCoordinator: BaseCoordinator, pDetailsCoordinator {
-    func start(with model: Any) {
+    func start(with model: Article) {
         
         let detailsVC = DetailsViewContorller()
-        let detailsVM = DetailsViewModel()
+        let detailsVM = DetailsViewModel(article: model)
         
         detailsVC.vm = detailsVM
         detailsVM.vc = detailsVC
