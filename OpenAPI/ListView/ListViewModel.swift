@@ -18,7 +18,12 @@ class ListViewModel: pListVM {
     weak var vc: pListViewController?
     var coordinator: pListCoordinator?
     
-    private var items: [Any] = []
+    private let articlesService: PArticlesService
+    private var items: [Article] = []
+    
+    init(service: PArticlesService) {
+        self.articlesService = service
+    }
     
     func itemsCount() -> Int {
         return items.count
@@ -29,11 +34,30 @@ class ListViewModel: pListVM {
     }
     
     func fetchItems() {
-        
+        if items.count == 0 {
+            articlesService.fetchArticles { [unowned self] loadedArticles in
+                guard let articles = loadedArticles else {
+                    return
+                }
+                items = articles
+                DispatchQueue.main.async {
+                    self.vc?.reload()
+                }
+            }
+        } else {
+            articlesService.reloadArticles { [unowned self] loadedArticles in
+                guard let articles = loadedArticles else {
+                    return
+                }
+                items = articles
+                DispatchQueue.main.async {
+                    self.vc?.reload()
+                }
+            }
+        }
     }
     
     func showDetailsForItemAtindex(index: Int) {
-        
+        coordinator?.openDetails(model: items[index])
     }
-    
 }

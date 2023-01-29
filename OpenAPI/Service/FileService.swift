@@ -93,6 +93,23 @@ final class FileService {
         return FileManager.default.fileExists(atPath: path.path)
     }
     
+    /// Delete file from local directory
+    func deleteFile(name: String) {
+        guard let path = getPathFor(name: name),
+              FileManager.default.fileExists(atPath: path.path)
+        else {
+            NSLog("[LocalFileManager] Error deleting file named: \(name)")
+            return
+        }
+        DispatchQueue.global(qos: .background).async {
+            do {
+                try FileManager.default.removeItem(at: path)
+            } catch let error {
+                NSLog ("[LocalFileManager] Error deleting file with path: \(path) (Error: \(error))")
+            }
+        }
+    }
+    
     func deleteAll(){
         guard let path = getPathFor(name: ""),
               let filesNames = try? FileManager.default.contentsOfDirectory(atPath: path.path)

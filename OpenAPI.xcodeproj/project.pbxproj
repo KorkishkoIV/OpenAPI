@@ -28,6 +28,7 @@
 		E1BCD90E29865E1700B4567A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E1BCD90D29865E1700B4567A /* Alamofire */; };
 		E1BCD91029865E6300B4567A /* NewsAPILoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD90F29865E6300B4567A /* NewsAPILoader.swift */; };
 		E1BCD91229866E6300B4567A /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD91129866E6300B4567A /* ImageLoader.swift */; };
+		E1BCD9142986911A00B4567A /* ArticlesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD9132986911A00B4567A /* ArticlesService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		E1BCD90A298521C400B4567A /* FileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileService.swift; sourceTree = "<group>"; };
 		E1BCD90F29865E6300B4567A /* NewsAPILoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPILoader.swift; sourceTree = "<group>"; };
 		E1BCD91129866E6300B4567A /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		E1BCD9132986911A00B4567A /* ArticlesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				E1BCD90A298521C400B4567A /* FileService.swift */,
 				E1BCD90F29865E6300B4567A /* NewsAPILoader.swift */,
 				E1BCD91129866E6300B4567A /* ImageLoader.swift */,
+				E1BCD9132986911A00B4567A /* ArticlesService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				E1BCD8FD2981B45400B4567A /* ArticlesResponce.swift in Sources */,
 				E1BCD8E3297F04A600B4567A /* AppCoordinator.swift in Sources */,
 				E1BCD8CF297EFBC300B4567A /* AppDelegate.swift in Sources */,
+				E1BCD9142986911A00B4567A /* ArticlesService.swift in Sources */,
 				E1BCD90929851B4000B4567A /* ImageService.swift in Sources */,
 				E1BCD8F72980626C00B4567A /* DetailsViewModel.swift in Sources */,
 				E1BCD8F92980630D00B4567A /* DetailsViewController.swift in Sources */,

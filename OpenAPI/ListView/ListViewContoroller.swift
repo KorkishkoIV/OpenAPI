@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol pListViewController: AnyObject {
-    
+    func reload()
 }
 
 final class ListViewController: UIViewController, pListViewController {
@@ -26,6 +26,7 @@ final class ListViewController: UIViewController, pListViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        vm?.fetchItems()
     }
     
     private func setupViews() {
@@ -46,6 +47,10 @@ final class ListViewController: UIViewController, pListViewController {
             listTableView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             listTableView.widthAnchor.constraint(equalTo: view.widthAnchor)
         ])
+    }
+    
+    func reload() {
+        listTableView.reloadData()
     }
 }
 

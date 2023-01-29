@@ -17,7 +17,7 @@ final class ListCoordinator: BaseCoordinator, pListCoordinator {
     
     func start(in window: UIWindow?) {
         let listVC = ListViewController()
-        let listVM = ListVMStub()//ListViewModel()
+        let listVM = ListViewModel(service: ArticlesService(fileService: fileService))
         
         listVC.vm = listVM
         listVM.vc = listVC
