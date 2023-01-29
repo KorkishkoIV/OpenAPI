@@ -28,6 +28,7 @@
 		E1BCD91029865E6300B4567A /* NewsAPILoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD90F29865E6300B4567A /* NewsAPILoader.swift */; };
 		E1BCD91229866E6300B4567A /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD91129866E6300B4567A /* ImageLoader.swift */; };
 		E1BCD9142986911A00B4567A /* ArticlesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD9132986911A00B4567A /* ArticlesService.swift */; };
+		E1BCD91A2986B62800B4567A /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = E1BCD9192986B62800B4567A /* SkeletonView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1BCD91A2986B62800B4567A /* SkeletonView in Frameworks */,
 				E1BCD90E29865E1700B4567A /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,6 +195,7 @@
 			name = OpenAPI;
 			packageProductDependencies = (
 				E1BCD90D29865E1700B4567A /* Alamofire */,
+				E1BCD9192986B62800B4567A /* SkeletonView */,
 			);
 			productName = OpenAPI;
 			productReference = E1BCD8CB297EFBC300B4567A /* OpenAPI.app */;
@@ -224,6 +227,7 @@
 			mainGroup = E1BCD8C2297EFBC300B4567A;
 			packageReferences = (
 				E1BCD90C29865E1700B4567A /* XCRemoteSwiftPackageReference "Alamofire" */,
+				E1BCD9182986B62800B4567A /* XCRemoteSwiftPackageReference "SkeletonView" */,
 			);
 			productRefGroup = E1BCD8CC297EFBC300B4567A /* Products */;
 			projectDirPath = "";
@@ -473,6 +477,14 @@
 				kind = branch;
 			};
 		};
+		E1BCD9182986B62800B4567A /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -480,6 +492,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E1BCD90C29865E1700B4567A /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		E1BCD9192986B62800B4567A /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1BCD9182986B62800B4567A /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

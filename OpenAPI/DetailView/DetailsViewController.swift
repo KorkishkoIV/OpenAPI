@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SkeletonView
 import UIKit
 
 protocol pDetailsViewController: AnyObject {
@@ -20,6 +21,7 @@ final class DetailsViewContorller: UIViewController, pDetailsViewController {
         imageView.layer.cornerRadius = 15
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
+        imageView.isSkeletonable = true
         imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = .gray
         return imageView
@@ -94,6 +96,7 @@ final class DetailsViewContorller: UIViewController, pDetailsViewController {
         authorLabel.text = model.authorString()
         contentLabel.text = model.presentationContent()
         
+        articleImageView.showAnimatedSkeleton()
         vm?.fetchArticleImage()
     }
     
@@ -136,5 +139,6 @@ final class DetailsViewContorller: UIViewController, pDetailsViewController {
     
     func setArticleImage(_ image: UIImage) {
         articleImageView.image = image
+        articleImageView.hideSkeleton()
     }
 }
