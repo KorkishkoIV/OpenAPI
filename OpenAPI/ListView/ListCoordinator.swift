@@ -14,6 +14,7 @@ protocol pListCoordinator: AnyObject {
 }
 
 final class ListCoordinator: BaseCoordinator, pListCoordinator {
+    
     func start(in window: UIWindow?) {
         let listVC = ListViewController()
         let listVM = ListVMStub()//ListViewModel()
@@ -28,7 +29,7 @@ final class ListCoordinator: BaseCoordinator, pListCoordinator {
     }
     
     func openDetails(model: Any) {
-        let detailsCoordinator = DetailsCoordinator()
+        let detailsCoordinator = DetailsCoordinator(fileService: self.fileService)
         detailsCoordinator.navigationController = self.navigationController
         guard let article = model as? Article else {
             return

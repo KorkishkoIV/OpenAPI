@@ -13,7 +13,9 @@ final class AppCoordinator {
     private var nav: UINavigationController?
     
     func start(window: UIWindow?) {
-        let listCoordinator = ListCoordinator()
+        let fileSevice = FileService(folder: "OpenAPI(NewsAPI)")
+        
+        let listCoordinator = ListCoordinator(fileService: fileSevice)
         listCoordinator.start(in: window)
     }
 }

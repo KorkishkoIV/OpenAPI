@@ -12,6 +12,7 @@ protocol pDetailsViewModel {
     func authorString() -> String
     func publishDateString() -> String
     func presentationContent() -> String
+    func fetchArticleImage()
 }
 
 final class DetailsViewModel: pDetailsViewModel {
@@ -19,9 +20,11 @@ final class DetailsViewModel: pDetailsViewModel {
     var coordinator: pDetailsCoordinator?
     
     private var article: Article
+    private let imageProvider: ImageLoader
     
-    init(article: Article) {
+    init(article: Article, imageLoader: ImageLoader) {
         self.article = article
+        self.imageProvider = imageLoader
     }
     
     func title() -> String {
@@ -57,6 +60,18 @@ final class DetailsViewModel: pDetailsViewModel {
                                      with: "",
                                      options: [.regularExpression],
                                             range: content.range(of: content))
+    }
+    
+    func fetchArticleImage() {
+        imageProvider.fetchImage(urlString: article.urlToImage) { image in
+            guard let image = image else {
+                return
+            }
+
+            DispatchQueue.main.async { [weak self] in
+                self?.vc?.setArticleImage(image)
+            }
+        }
     }
     
 }

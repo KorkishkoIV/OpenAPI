@@ -12,8 +12,10 @@ protocol pDetailsCoordinator {
 final class DetailsCoordinator: BaseCoordinator, pDetailsCoordinator {
     func start(with model: Article) {
         
+        let imageLoader = ImageLoader(fileService: fileService)
+        
         let detailsVC = DetailsViewContorller()
-        let detailsVM = DetailsViewModel(article: model)
+        let detailsVM = DetailsViewModel(article: model, imageLoader: imageLoader)
         
         detailsVC.vm = detailsVM
         detailsVM.vc = detailsVC

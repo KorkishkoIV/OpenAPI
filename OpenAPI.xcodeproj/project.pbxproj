@@ -10,7 +10,7 @@
 		E1BCD8CF297EFBC300B4567A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD8CE297EFBC300B4567A /* AppDelegate.swift */; };
 		E1BCD8D3297EFBC300B4567A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD8D2297EFBC300B4567A /* ViewController.swift */; };
 		E1BCD8D8297EFBC400B4567A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1BCD8D7297EFBC400B4567A /* Assets.xcassets */; };
-		E1BCD8E3297F04A600B4567A /* AppCoorddinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD8E2297F04A600B4567A /* AppCoorddinator.swift */; };
+		E1BCD8E3297F04A600B4567A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD8E2297F04A600B4567A /* AppCoordinator.swift */; };
 		E1BCD8E5297F059B00B4567A /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD8E4297F059B00B4567A /* ListCoordinator.swift */; };
 		E1BCD8E7297F089300B4567A /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD8E6297F089300B4567A /* BaseCoordinator.swift */; };
 		E1BCD8EF297F122600B4567A /* ListViewContoroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD8EE297F122600B4567A /* ListViewContoroller.swift */; };
@@ -23,6 +23,8 @@
 		E1BCD90029824F1500B4567A /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD8FF29824F1500B4567A /* ListCell.swift */; };
 		E1BCD9022982561400B4567A /* ListVMStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD9012982561400B4567A /* ListVMStub.swift */; };
 		E1BCD9062982891C00B4567A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD9052982891C00B4567A /* SceneDelegate.swift */; };
+		E1BCD90929851B4000B4567A /* ImageLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD90829851B4000B4567A /* ImageLoad.swift */; };
+		E1BCD90B298521C400B4567A /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCD90A298521C400B4567A /* FileService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +33,7 @@
 		E1BCD8D2297EFBC300B4567A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E1BCD8D7297EFBC400B4567A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1BCD8DC297EFBC400B4567A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E1BCD8E2297F04A600B4567A /* AppCoorddinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoorddinator.swift; sourceTree = "<group>"; };
+		E1BCD8E2297F04A600B4567A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		E1BCD8E4297F059B00B4567A /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
 		E1BCD8E6297F089300B4567A /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		E1BCD8EE297F122600B4567A /* ListViewContoroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewContoroller.swift; sourceTree = "<group>"; };
@@ -44,6 +46,8 @@
 		E1BCD8FF29824F1500B4567A /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		E1BCD9012982561400B4567A /* ListVMStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVMStub.swift; sourceTree = "<group>"; };
 		E1BCD9052982891C00B4567A /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = SOURCE_ROOT; };
+		E1BCD90829851B4000B4567A /* ImageLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoad.swift; sourceTree = "<group>"; };
+		E1BCD90A298521C400B4567A /* FileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,7 @@
 		E1BCD8CD297EFBC300B4567A /* OpenAPI */ = {
 			isa = PBXGroup;
 			children = (
+				E1BCD90729851B2000B4567A /* Service */,
 				E1BCD8F32980616300B4567A /* DetailView */,
 				E1BCD8E8297F10BA00B4567A /* BaseObjects */,
 				E1BCD8CE297EFBC300B4567A /* AppDelegate.swift */,
@@ -83,7 +88,7 @@
 				E1BCD8D2297EFBC300B4567A /* ViewController.swift */,
 				E1BCD8D7297EFBC400B4567A /* Assets.xcassets */,
 				E1BCD8DC297EFBC400B4567A /* Info.plist */,
-				E1BCD8E2297F04A600B4567A /* AppCoorddinator.swift */,
+				E1BCD8E2297F04A600B4567A /* AppCoordinator.swift */,
 				E1BCD8F229805ECB00B4567A /* ListView */,
 				E1BCD8FE2981B4E700B4567A /* Models */,
 			);
@@ -127,6 +132,15 @@
 				E1BCD8FC2981B45400B4567A /* ArticlesResponce.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E1BCD90729851B2000B4567A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E1BCD90829851B4000B4567A /* ImageLoad.swift */,
+				E1BCD90A298521C400B4567A /* FileService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,12 +219,14 @@
 				E1BCD8F129805AA300B4567A /* ListViewModel.swift in Sources */,
 				E1BCD9062982891C00B4567A /* SceneDelegate.swift in Sources */,
 				E1BCD8E7297F089300B4567A /* BaseCoordinator.swift in Sources */,
+				E1BCD90B298521C400B4567A /* FileService.swift in Sources */,
 				E1BCD90029824F1500B4567A /* ListCell.swift in Sources */,
 				E1BCD8D3297EFBC300B4567A /* ViewController.swift in Sources */,
 				E1BCD8F52980618800B4567A /* DetailsCoordinator.swift in Sources */,
 				E1BCD8FD2981B45400B4567A /* ArticlesResponce.swift in Sources */,
-				E1BCD8E3297F04A600B4567A /* AppCoorddinator.swift in Sources */,
+				E1BCD8E3297F04A600B4567A /* AppCoordinator.swift in Sources */,
 				E1BCD8CF297EFBC300B4567A /* AppDelegate.swift in Sources */,
+				E1BCD90929851B4000B4567A /* ImageLoad.swift in Sources */,
 				E1BCD8F72980626C00B4567A /* DetailsViewModel.swift in Sources */,
 				E1BCD8F92980630D00B4567A /* DetailsViewController.swift in Sources */,
 			);

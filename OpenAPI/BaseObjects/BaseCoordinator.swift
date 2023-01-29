@@ -9,4 +9,9 @@ import UIKit
 
 class BaseCoordinator {
     var navigationController: UINavigationController?
+    let fileService: FileService
+    
+    init (fileService: FileService) {
+        self.fileService = fileService
+    }
 }

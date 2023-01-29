@@ -9,13 +9,13 @@ import Foundation
 import UIKit
 
 protocol pDetailsViewController: AnyObject {
-    
+    func setArticleImage(_ image: UIImage)
 }
 
 final class DetailsViewContorller: UIViewController, pDetailsViewController {
     var vm: pDetailsViewModel?
     
-    private var image: UIImageView = {
+    private var articleImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 15
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -74,7 +74,7 @@ final class DetailsViewContorller: UIViewController, pDetailsViewController {
         view.backgroundColor = .white
         navigationItem.title = "Details"
         
-        view.addSubview(image)
+        view.addSubview(articleImageView)
         view.addSubview(titleLabel)
         view.addSubview(publishDateLabel)
         view.addSubview(authorLabel)
@@ -96,38 +96,42 @@ final class DetailsViewContorller: UIViewController, pDetailsViewController {
     
     private func setupConstarints() {
         NSLayoutConstraint.activate([
-            image.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            image.heightAnchor.constraint(equalToConstant: 200),
-            image.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10),
-            image.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10)
+            articleImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            articleImageView.heightAnchor.constraint(equalToConstant: 200),
+            articleImageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10),
+            articleImageView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10)
         ])
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 10),
+            titleLabel.topAnchor.constraint(equalTo: articleImageView.bottomAnchor, constant: 10),
             titleLabel.heightAnchor.constraint(lessThanOrEqualToConstant: titleLabel.font.lineHeight * 3),
-            titleLabel.leftAnchor.constraint(equalTo: image.leftAnchor),
-            titleLabel.rightAnchor.constraint(equalTo: image.rightAnchor)
+            titleLabel.leftAnchor.constraint(equalTo: articleImageView.leftAnchor),
+            titleLabel.rightAnchor.constraint(equalTo: articleImageView.rightAnchor)
         ])
         
         NSLayoutConstraint.activate([
             publishDateLabel.topAnchor.constraint(equalTo: titleLabel.lastBaselineAnchor, constant: 10),
             publishDateLabel.heightAnchor.constraint(equalToConstant: publishDateLabel.font.lineHeight),
-            publishDateLabel.leftAnchor.constraint(equalTo: image.leftAnchor),
-            publishDateLabel.rightAnchor.constraint(equalTo: image.rightAnchor)
+            publishDateLabel.leftAnchor.constraint(equalTo: articleImageView.leftAnchor),
+            publishDateLabel.rightAnchor.constraint(equalTo: articleImageView.rightAnchor)
         ])
         NSLayoutConstraint.activate([
             authorLabel.topAnchor.constraint(equalTo: publishDateLabel.lastBaselineAnchor, constant: 5),
             authorLabel.heightAnchor.constraint(equalToConstant: authorLabel.font.lineHeight),
-            authorLabel.leftAnchor.constraint(equalTo: image.leftAnchor),
-            authorLabel.rightAnchor.constraint(equalTo: image.rightAnchor)
+            authorLabel.leftAnchor.constraint(equalTo: articleImageView.leftAnchor),
+            authorLabel.rightAnchor.constraint(equalTo: articleImageView.rightAnchor)
         ])
         
         NSLayoutConstraint.activate([
             contentLabel.topAnchor.constraint(equalTo: authorLabel.lastBaselineAnchor, constant: 10),
             contentLabel.heightAnchor.constraint(lessThanOrEqualToConstant: 300),
-            contentLabel.leftAnchor.constraint(equalTo: image.leftAnchor),
-            contentLabel.rightAnchor.constraint(equalTo: image.rightAnchor)
+            contentLabel.leftAnchor.constraint(equalTo: articleImageView.leftAnchor),
+            contentLabel.rightAnchor.constraint(equalTo: articleImageView.rightAnchor)
         ])
         
+    }
+    
+    func setArticleImage(_ image: UIImage) {
+        articleImageView.image = image
     }
 }
