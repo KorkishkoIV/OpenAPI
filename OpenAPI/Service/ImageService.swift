@@ -35,6 +35,16 @@ class ImageService {
             }
             return
         }
+        
+        fetchImageNetwork(url: url) { [unowned self] result in
+            switch result {
+            case .success(let imageData):
+                completion(UIImage(data: imageData))
+                fileService.saveToFile(data: imageData, name: urlAsFileName)
+            case .failure(_):
+                completion(nil)
+            }
+        }
     }
 }
 

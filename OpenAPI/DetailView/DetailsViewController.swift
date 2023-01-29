@@ -19,7 +19,8 @@ final class DetailsViewContorller: UIViewController, pDetailsViewController {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 15
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = .gray
         return imageView
     }()
@@ -92,6 +93,8 @@ final class DetailsViewContorller: UIViewController, pDetailsViewController {
         publishDateLabel.text = model.publishDateString()
         authorLabel.text = model.authorString()
         contentLabel.text = model.presentationContent()
+        
+        vm?.fetchArticleImage()
     }
     
     private func setupConstarints() {
