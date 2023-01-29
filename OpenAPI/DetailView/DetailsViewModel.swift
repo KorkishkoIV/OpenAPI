@@ -20,9 +20,9 @@ final class DetailsViewModel: pDetailsViewModel {
     var coordinator: pDetailsCoordinator?
     
     private var article: Article
-    private let imageProvider: ImageLoader
+    private let imageProvider: ImageService
     
-    init(article: Article, imageLoader: ImageLoader) {
+    init(article: Article, imageLoader: ImageService) {
         self.article = article
         self.imageProvider = imageLoader
     }
