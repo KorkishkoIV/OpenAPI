@@ -35,8 +35,17 @@ final class ListViewController: UIViewController, pListViewController {
         
         listTableView.delegate = self
         listTableView.dataSource = self
+        listTableView.refreshControl = {
+            let refresh = UIRefreshControl()
+             refresh.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+             return refresh
+         }()
         
-        navigationItem.title = "List"
+        if vm?.itemsCount() == 0 {
+            listTableView.refreshControl?.beginRefreshing()
+        }
+        
+        navigationItem.title = "Articles list"
         setupConstraints()
     }
     
@@ -51,6 +60,11 @@ final class ListViewController: UIViewController, pListViewController {
     
     func reload() {
         listTableView.reloadData()
+        listTableView.refreshControl?.endRefreshing()
+    }
+    
+    @objc private func refresh(_ sender:AnyObject) {
+        vm?.reloadItems()
     }
 }
 
@@ -64,6 +78,7 @@ extension ListViewController: UITableViewDataSource {
               let item = vm?.item(index: indexPath.row) else {
             return UITableViewCell()
         }
+        cell.accessoryType = .disclosureIndicator
         cell.setModel(item)
         return cell    
     }
@@ -72,5 +87,6 @@ extension ListViewController: UITableViewDataSource {
 extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         vm?.showDetailsForItemAtindex(index: indexPath.row)
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 }

@@ -26,7 +26,7 @@ class NewsAPIRequestLoader: PArticleLoader {
     }()
     
     static func fetchArticles(_ completion: @escaping(Result<[Article], Error>) -> Void){
-        let parameters = ["q":"ios"]
+        let parameters = ["q":"development"]
         let headers: HTTPHeaders = [.authorization(apiKey)]
         
         AF.request(endPoint, parameters: parameters, headers: headers)

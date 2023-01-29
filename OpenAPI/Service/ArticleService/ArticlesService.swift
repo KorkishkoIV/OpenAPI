@@ -76,5 +76,4 @@ class ArticlesService: PArticlesService {
         }
         fileService.saveToFile(data: data, name: fileName)
     }
-    
 }

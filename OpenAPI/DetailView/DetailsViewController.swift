@@ -73,7 +73,7 @@ final class DetailsViewContorller: UIViewController, pDetailsViewController {
     
     private func configureViews() {
         view.backgroundColor = .white
-        navigationItem.title = "Details"
+        navigationItem.title = "Article details"
         
         view.addSubview(articleImageView)
         view.addSubview(titleLabel)

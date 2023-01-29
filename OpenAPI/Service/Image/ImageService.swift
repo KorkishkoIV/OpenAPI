@@ -23,8 +23,9 @@ class ImageService {
             return
         }
         
-        let urlAsFileName = url.absoluteString.replacingOccurrences(of: "/", with: "_")
+        let urlAsFileName = url.absoluteString
             .replacingOccurrences(of: "https://", with: "")
+            .replacingOccurrences(of: "/", with: "_")
         if fileService.fileExist(name: urlAsFileName) {
             fileService.asyncGetDataFromFile(name: urlAsFileName) { data in
                 guard let data = data else {

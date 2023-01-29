@@ -23,7 +23,7 @@ class ListCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 2
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        label.textAlignment = .justified
+        label.textAlignment = .natural
         return label
     }()
     

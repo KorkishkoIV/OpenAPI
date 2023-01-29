@@ -11,6 +11,7 @@ protocol pListVM {
     func itemsCount() -> Int
     func item(index: Int) -> Any
     func fetchItems()
+    func reloadItems()
     func showDetailsForItemAtindex(index: Int)
 }
 
@@ -34,26 +35,20 @@ class ListViewModel: pListVM {
     }
     
     func fetchItems() {
-        if items.count == 0 {
-            articlesService.fetchArticles { [unowned self] loadedArticles in
-                guard let articles = loadedArticles else {
-                    return
-                }
-                items = articles
-                DispatchQueue.main.async {
-                    self.vc?.reload()
-                }
-            }
-        } else {
-            articlesService.reloadArticles { [unowned self] loadedArticles in
-                guard let articles = loadedArticles else {
-                    return
-                }
-                items = articles
-                DispatchQueue.main.async {
-                    self.vc?.reload()
-                }
-            }
+        articlesService.fetchArticles(completion: handler)
+    }
+    
+    func reloadItems() {
+        articlesService.reloadArticles(completion: handler)
+    }
+    
+    private func handler(loadedArticles: [Article]?) {
+        guard let articles = loadedArticles else {
+            return
+        }
+        items = articles
+        DispatchQueue.main.async {
+            self.vc?.reload()
         }
     }
     
